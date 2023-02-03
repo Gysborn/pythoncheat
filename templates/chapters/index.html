@@ -1,0 +1,14 @@
+{% extends 'chapters/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<ul>
+    {% for c in chapters %}
+    <li>
+        <p>{{c.time_create}}</p>
+        <h2>{{c.name}}</h2>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
