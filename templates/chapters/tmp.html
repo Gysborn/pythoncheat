@@ -1,221 +1,44 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="{% static '/chapters/images/favicon.svg' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/chapters/images/64x64.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/chapters/images/32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/chapters/images/16x16.png' %}">
-    <title> Якоря | WebReference</title>
-    <link rel="stylesheet" media="all"
-          href="{% static '/chapters/css/css_6J2K3eXEWyV5JT15TYdFXPuADLnwFKUIYbpG0bsvwuE.css' %}"/>
-    <!--
-            <script>window.yaContextCb=window.yaContextCb||[]</script><script src="https://yandex.ru/ads/system/context.js" async></script>
-            --></head>
-<body>
-<header class="w-header-main">
-    <nav class="navbar container" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand"><a href="/" class="w-logo"><span class="w-logo-p1">Python</span><span class="w-logo-p2">Sheets</span></a><a
-                role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="w-navbar"><span
-                aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
-        <div id="w-navbar" class="navbar-menu w-menu-main">
-            <div class="navbar-start"><a href="/" class="navbar-item" data-drupal-link-system-path="&lt;front&gt;">Главная</a><a
-                    href="/ref" class="navbar-item" data-drupal-link-system-path="taxonomy/term/24">Справочники</a>
-                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Руководства</span>
-                    <div class="navbar-dropdown"><a href="/layout" class="navbar-item active-trail"
-                                                    data-drupal-link-system-path="taxonomy/term/43">Вёрстка</a><a
-                            href="/dev" class="navbar-item" data-drupal-link-system-path="taxonomy/term/1">Веб-технологии</a>
-                    </div>
-                </div>
-                <a href="/course" class="navbar-item" data-drupal-link-system-path="course">Курсы</a><a href="/recipe"
-                                                                                                        class="navbar-item"
-                                                                                                        data-drupal-link-system-path="recipe">Рецепты</a><a
-                        href="/practice" class="navbar-item" data-drupal-link-system-path="practice">Практика</a><a
-                        href="/individual" class="navbar-item"
-                        data-drupal-link-system-path="individual">Самостоятельная</a><a href="/quiz" class="navbar-item"
-                                                                                        data-drupal-link-system-path="quiz">Викторина</a>
+{% extends 'chapters/base.html' %}
 
-            </div>
+{% block content %}
+    <main>
 
-        </div>
-    </nav>
-</header>
-<main>
-    <div class="w-title">
-        <div class="container"><h1>Якоря</h1></div>
-    </div>
+    <div id="w-lesson">
+    <b-tabs type="is-boxed">
+        {% for r in rows.values %}
+            <b-tab-item label="Dj 27.2">
+                <p class="exampleTitle">Оглавление</p>
+                    {% for pk in r %}
+                        <p><a href="#{{ pk.slug }} + 10">{{ pk.name }}</a></p>
+                    {% endfor %}
+                {% for i in r %}
+                    {% if i.name %}
+                        <p id="{{ i.slug }} + 10"></p>
+                        <h1>{{ i.name }}</h1>
+                    {% endif %}
 
-    <div class="container">
-        <div class="columns">
-            <div class="column is-9-desktop is-12-tablet is-12-mobile w-content" id="w-main">
-                <div data-drupal-messages-fallback class="hidden"></div>
-                <div id="w-lesson">
-                    <b-tabs type="is-boxed">
-                        <b-tab-item label="Описание"><p>Якорем называется закладка с уникальным именем на определённом
-                            месте веб-страницы, предназначенная для перехода к ней по ссылке. Якоря удобно применять в
-                            документах большого объёма, чтобы можно было быстро переходить к нужному разделу.</p>
-                            <p>Для создания якоря следует вначале сделать закладку в соответствующем месте и дать ей
-                                уникальное имя при помощи атрибута <span class="attribute">id</span> (пример&nbsp;1). В
-                                имени допустимо писать русские, латинские буквы и символы, нельзя только пробел. В
-                                качестве значения <span class="attribute">href</span> для перехода к этому якорю
-                                используется значение <span class="attribute">id</span> с символом решётки (#) впереди.
-                            </p>
-                            <p class="exampleTitle">Пример 1. Создание якоря</p>
-                            <pre><code data-language="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
- &lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;Быстрый переход внутри документа&lt;/title&gt;
- &lt;/head&gt;
- &lt;body&gt;
-  &lt;p id=&quot;top&quot;&gt;&lt;/p&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;p&gt;&lt;a href=&quot;#top&quot;&gt;Наверх&lt;/a&gt;&lt;/p&gt;
- &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                            <p>Имя ссылки на якорь начинается с решётки (#), после чего идёт имя якоря, оно выбирается
-                                любое, соответствующее тематике. Главное, чтобы значения атрибутов <span
-                                        class="attribute">id</span> и <span class="attribute">href</span> совпадали
-                                (символ решётки не в счёт).</p>
-                            <p>При щелчке по такой ссылке произойдёт переход к элементу в окне браузера.</p>
-                            <p>С якорями связана одна особенность работы браузера. После перехода к указанному якорю
-                                нажатие на кнопку «Назад» возвращает не на предыдущую просмотренную страницу, а к
-                                ссылке, с которой был сделан переход к якорю. Получается, что для перехода к предыдущему
-                                документу надо нажать кнопку «Назад» два раза.</p>
-                            <p>Ссылку также можно сделать на якорь на другой веб-странице и даже на другом сайте. Для
-                                этого в атрибуте <span class="attribute">href</span> элемента <span class="tag">&lt;a&gt;</span>
-                                надо указать полный адрес документа и в конце добавить символ решётки и имя якоря
-                                (пример&nbsp;2).</p>
-                            <p class="exampleTitle">Пример 2. Быстрый переход по Википедии</p>
-                            <w-example>&lt;!DOCTYPE html&gt;
-                                &lt;html&gt;
-                                &lt;head&gt;
-                                &lt;meta charset=&quot;utf-8&quot;&gt;
-                                &lt;title&gt;Якорь в другом документе&lt;/title&gt;
-                                &lt;/head&gt;
-                                &lt;body&gt;
-                                &lt;p&gt;&lt;a href=&quot;https://ru.wikipedia.org/wiki/HTML5#Разметка&quot;&gt;Разметка
-                                HTML 5&lt;/a&gt;&lt;/p&gt;
-                                &lt;/body&gt;
-                                &lt;/html&gt;
-                            </w-example>
-                            <p>В данном примере показано создание ссылки на страницу Википедии, при открытии ссылки
-                                происходит переход к разделу с якорем <span class="var">HTML_5.1</span>.</p>
-                            <p>Если на веб-странице содержится ссылка на якорь, а самого якоря нет, то никакой ошибки не
-                                возникнет. По этой причине решётку часто используют для пустых ссылок, когда ссылка
-                                нужна, но адрес пока не известен (пример&nbsp;3) или нажатие обрабатывается программой
-                                на JavaScript.</p>
-                            <p class="exampleTitle">Пример 3. Пустые ссылки</p>
-                            <pre><code data-language="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
- &lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;#&lt;/title&gt;
- &lt;/head&gt;
- &lt;body&gt;
-  &lt;p&gt;&lt;a href=&quot;#&quot;&gt;О нас&lt;/a&gt;
-   &lt;a href=&quot;#&quot;&gt;Проекты&lt;/a&gt;
-   &lt;a href=&quot;#&quot;&gt;Вакансии&lt;/a&gt;&lt;/p&gt;
- &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                            <p>Такого рода ссылки по своему виду ничем не отличаются от обычных ссылок&nbsp;— по ним
-                                можно щёлкать и они становятся при этом посещаемыми. Естественно, перехода на другую
-                                страницу при этом нет, но происходит переход к верхней части страницы, что особенно
-                                заметно при длинном тексте.</p>
+                    {% if i.description %}
+                        <p class="exampleTitle">{{ i.description }}</p>
+                    {% endif %}
 
-                        </b-tab-item>
-                        <b-tab-item label="Задания">
-                            <section id="w-task">
-                                <b-tabs type="is-toggle">
-                                    <b-tab-item label=1>
-                                        <div id="w-task">
-                                            <w-task-single-choice
-                                                    :quiz="[
-    {
-    question:'С помощью какого атрибута устанавливается якорь?',
-    answers:[{text:'id',correct:!0},{text:'class'},{text:'href'},{text:'name'}]
-    },
-    {
-    question:'Какая ссылка на якорь правильная?',
-    answers:[{code:'<a href=&quot;#content&quot;>Содержание</a>',correct:!0},{code:'<a href=&quot;content&quot;>Содержание</a>'},{code:'<a name=&quot;#content&quot;>Содержание</a>'},{code:'<a name=&quot;content&quot;>Содержание</a>'}]
-    },
-    {
-    question:'Как сделать ссылку с якорем на другую страницу?',
-    answers:[{code:'<a href=&quot;link.html#content&quot;>Содержание</a>',correct:!0},{code:'<a href=&quot;link.html?content&quot;>Содержание</a>'},{code:'<a href=&quot;link.html&content&quot;>Содержание</a>'},{code:'<a href=&quot;link.html$content&quot;>Содержание</a>'}]
-    },
-    {
-    question:'Для ссылки <a href=&quot;#title&quot;> как записать якорь?',
-    answers:[{code:'<h2 id=&quot;title&quot;>Заголовок</h2>',correct:!0},{code:'<h2 id=&quot;#title&quot;>Заголовок</h2>'},{code:'<h2 id=&quot;$title&quot;>Заголовок</h2>'},{code:'<h2 id=&quot;?title&quot;>Заголовок</h2>'}]
-    },
-    {
-    question:'Какая ошибка содержится в следующем коде?',
-    code:'<p><a href=&quot;#usb&quot;>Перейти</a></p>\n<h2 id=&quot;usb&quot;>Заголовок 1</h2>\n<h2 id=&quot;usb&quot;>Заголовок 2</h2>',
-    answers:[{text:'Повторяется значение id.',correct:!0},{text:'Неверно записан адрес ссылки.'},{text:'Неправильное вложение элементов.'},{text:'Элемент <p> идёт перед <h2>.'}]
-    }
-]"></w-task-single-choice>
-                                        </div>
-                                    </b-tab-item>
-                                    <b-tab-item label=2>
-                                        <div id="w-task">
-                                            <w-task-fill-in-the-blanks
-                                                    quiz="<p><a href=&quot;*#warlords*&quot;>Перейти</a></p><h2 *id*=&quot;warlords&quot;>Warlords</h2>"></w-task-fill-in-the-blanks>
-                                        </div>
-                                    </b-tab-item>
-                                    <b-tab-item label=3>
-                                        <div id="w-task">
-                                            <w-task-drag-the-words
-                                                    quiz="*<!DOCTYPE html>*
-*<html>*
-  *<head>*
-    <meta charset=&quot;utf-8&quot;><title>Якоря</title>
-  *</head>*
-  <body>
-    *<h1 id=&quot;title&quot;>*Якоря</h1><p>*<a href=&quot;#title&quot;>*Наверх*</a>*</p></body></html>"></w-task-drag-the-words>
-                                        </div>
-                                    </b-tab-item>
-                                </b-tabs>
-                            </section>
-                        </b-tab-item>
-                    </b-tabs>
-                </div>
-            </div>
-            <aside class="column is-3-desktop is-12-tablet is-12-mobile w-sidebar" id="w-sidebar">
-                <section class="w-region w-region-sidebar-toc">
-                    <div class="w-block" class="views-element-container" id="block-course-toc"><h2
-                            class="w-block-title">Содержание</h2>
-                        <div class="w-block-content">
-                            <ul>
-                                <li><a href="/course/html-tutorial/introduction" hreflang="ru">Введение</a></li>
-                                <li><a href="/course/html-tutorial/tool" hreflang="ru">Data types</a></li>
-                                <li><a href="/course/html-tutorial/element" hreflang="ru">Cycle</a></li>
-                                <li><a href="/course/html-tutorial/structure" hreflang="ru">Functional programming</a></li>
-                                <li><a href="/course/html-tutorial/attr" hreflang="ru">OOP</a></li>
-                                <li><a href="/course/html-tutorial/value" hreflang="ru">Patterns Anti patterns</a></li>
-                                <li><a href="/course/html-tutorial/text" hreflang="ru">Regulars</a></li>
-                                <li><a href="/course/html-tutorial/link" hreflang="ru">Libraries</a></li>
-                                <li><a href="/course/html-tutorial/image" hreflang="ru">Django</a></li>
-                                <li><a href="/course/html-tutorial/image" hreflang="ru">Flask</a></li>
-                                <li><a href="/course/html-tutorial/anchor" hreflang="ru">Git</a></li>
-                                <li><a href="/course/html-tutorial/list" hreflang="ru">Computer science</a></li>
-                                <li><a href="/course/html-tutorial/image" hreflang="ru">Docker</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">IDE</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">Testing</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">Exceptions</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">Typing</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">SQL</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">Hosting and deploy</a></li>
-                                <li><a href="/course/html-tutorial/image" hreflang="ru">Documentation</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </aside>
-        </div>
-    </div>
-</main>
+                    {% if i.code %}
+                        <pre><code data-language="html">
+                            {{ i.code }}
+                        </code></pre>
+                    {% endif %}
 
-<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1820","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"statistics":{"data":{"nid":"1820"},"url":"\/core\/modules\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"e9603fc0fa0d77bcc6f850b694ae9dfcf2c336f1eca9bd06bb04d9098c955631"}}</script>
-<script src="{% static '/chapters/js/js_z-5LIluyddUFY97Zpo4e3SzgYTSkT29mCaUQmMp9dBk.js' %}"></script>
-</body>
-</html>
+                {% endfor %}
+
+        </b-tab-item>
+        {% endfor %}
+    </b-tabs>
+
+{% endblock %}
+
+</div>
+{% block menu %}
+
+
+    </main>
+{% endblock %}
+

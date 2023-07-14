@@ -35,7 +35,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'embed_video',
+    'dj',
+    'oop',
     'storage.apps.StorageConfig',
+    'typs',
+    'regulars',
+    'exceptions',
+    'func_prog',
+    'hosting',
+    'docker',
+    'sql',
+    'flask',
+    'testing',
+    'git',
+
 ]
 
 MIDDLEWARE = [
@@ -122,3 +136,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request'
+)
