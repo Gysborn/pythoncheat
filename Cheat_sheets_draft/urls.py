@@ -22,6 +22,7 @@ from Cheat_sheets_draft import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('storage.urls')),
+    path('', include('dj.urls')),
 ]
 
 if settings.DEBUG:
