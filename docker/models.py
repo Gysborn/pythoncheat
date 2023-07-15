@@ -4,11 +4,11 @@ from storage.models import Chapters
 
 
 class D252(models.Model):
-    name = models.CharField(max_length=50, null=True, blank=True)
-    code = models.CharField(max_length=1000, null=True, blank=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
+    code = models.CharField(max_length=2000, null=True, blank=True)
     slug = models.SlugField(max_length=50, null=True)
     photo = models.ImageField(upload_to="photos/", null=True, blank=True)
-    description = models.CharField(max_length=1000, null=True, blank=True)
+    description = models.CharField(max_length=2000, null=True, blank=True)
     git = models.CharField(max_length=100, null=True, blank=True)
     colab = models.CharField(max_length=100, null=True, blank=True)
     video = EmbedVideoField(blank=True, verbose_name='Видео')
@@ -38,11 +38,11 @@ class D261(models.Model):
 
 
 class D262(models.Model):
-    name = models.CharField(max_length=50, null=True, blank=True)
-    code = models.CharField(max_length=1000, null=True, blank=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
+    code = models.CharField(max_length=2000, null=True, blank=True)
     slug = models.SlugField(max_length=50, null=True)
     photo = models.ImageField(upload_to="photos/", null=True, blank=True)
-    description = models.CharField(max_length=1000, null=True, blank=True)
+    description = models.CharField(max_length=2000, null=True, blank=True)
     git = models.CharField(max_length=100, null=True, blank=True)
     colab = models.CharField(max_length=100, null=True, blank=True)
     video = EmbedVideoField(blank=True, verbose_name='Видео')

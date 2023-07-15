@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('storage.urls')),
     path('', include('dj.urls')),
+    path('', include('docker.urls')),
+
 ]
 
 if settings.DEBUG:
