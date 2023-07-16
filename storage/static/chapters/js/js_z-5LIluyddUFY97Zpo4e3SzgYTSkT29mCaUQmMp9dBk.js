@@ -958,7 +958,7 @@
     });
     var W = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
     E.Deferred.exceptionHook = function (e, t) {
-        C.console && C.console.warn && e && W.test(e.name) && C.console.warn("jQuery.Deferred exception: " + e.message, e.stack, t)
+        C.console && C.console.warn && e && W.test(e.name) && C.console.warn("jQuery.Deferred exceptions: " + e.message, e.stack, t)
     }, E.readyException = function (e) {
         C.setTimeout(function () {
             throw e

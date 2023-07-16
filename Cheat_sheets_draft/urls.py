@@ -24,6 +24,11 @@ urlpatterns = [
     path('', include('storage.urls')),
     path('', include('dj.urls')),
     path('', include('docker.urls')),
+    path('', include('flask.urls')),
+    path('', include('func_prog.urls')),
+    path('', include('hosting.urls')),
+    path('', include('oop.urls')),
+    path('', include('exceptions.urls')),
 
 ]
 
