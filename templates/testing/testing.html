@@ -1,0 +1,97 @@
+{% extends 'chapters/base.html' %}
+
+{% block content %}
+    <main>
+
+    <div id="w-lesson">
+    <b-tabs type="is-boxed">
+        <b-tab-item label="Testing 13.1">
+        <p class="exampleTitle">Оглавление</p>
+            {% for pk in testing_131 %}
+                <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
+            {% endfor %}
+        {% for i in testing_131 %}
+            {% if i.name %}
+                <p id="{{ i.id }}"></p>
+                <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.description %}
+                <p class="exampleTitle">{{ i.description }}</p>
+            {% endif %}
+
+            {% if i.code %}
+                <pre><code data-language="html">
+                    {{ i.code }}
+                </code></pre>
+            {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Testing 20.1">
+                <p class="exampleTitle">Оглавление</p>
+                    {% for pk in testing_201 %}
+                        <p><a href="#{{ pk.id }} + 10">{{ pk.name }}</a></p>
+                    {% endfor %}
+                {% for i in testing_201 %}
+                    {% if i.name %}
+                        <p id="{{ i.id }} + 10"></p>
+                        <h1>{{ i.name }}</h1>
+                    {% endif %}
+
+                    {% if i.description %}
+                        <p class="exampleTitle">{{ i.description }}</p>
+                    {% endif %}
+
+                    {% if i.code %}
+                        <pre><code data-language="html">
+                            {{ i.code }}
+                        </code></pre>
+                    {% endif %}
+
+                {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Testing 20.2">
+            <p class="exampleTitle">Оглавление</p>
+                {% for pk in testing_202 %}
+                    <p><a href="#{{ pk.id }} + 50">{{ pk.name }}</a></p>
+                {% endfor %}
+            {% for i in testing_202 %}
+                {% if i.name %}
+                    <p id="{{ i.id }} + 50"></p>
+                    <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.description %}
+                    <p class="exampleTitle">{{ i.description }}</p>
+                {% endif %}
+
+                {% if i.code %}
+                    <pre><code data-language="html">
+                        {{ i.code }}
+                    </code></pre>
+                {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+
+    </b-tabs>
+
+{% endblock %}
+
+</div>
+{% block menu %}
+
+
+    </main>
+{% endblock %}
+

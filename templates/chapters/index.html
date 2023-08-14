@@ -5,83 +5,9 @@
 
     <div id="w-lesson">
     <b-tabs type="is-boxed">
-        <b-tab-item label="Dj 27.1">
-        <p class="exampleTitle">Оглавление</p>
-            {% for pk in content_271 %}
-                <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
-            {% endfor %}
-        {% for i in content_271 %}
-            {% if i.name %}
-                <p id="{{ i.id }}"></p>
-                <h1>{{ i.name }}</h1>
-            {% endif %}
-
-            {% if i.description %}
-                <p class="exampleTitle">{{ i.description }}</p>
-            {% endif %}
-
-            {% if i.code %}
-                <pre><code data-language="html">
-                    {{ i.code }}
-                </code></pre>
-            {% endif %}
-
-        {% endfor %}
-
-
-        </b-tab-item>
-
-        <b-tab-item label="Dj 27.2">
-                <p class="exampleTitle">Оглавление</p>
-                    {% for pk in content_272 %}
-                        <p><a href="#{{ pk.id }} + 10">{{ pk.name }}</a></p>
-                    {% endfor %}
-                {% for i in content_272 %}
-                    {% if i.name %}
-                        <p id="{{ i.id }} + 10"></p>
-                        <h1>{{ i.name }}</h1>
-                    {% endif %}
-
-                    {% if i.description %}
-                        <p class="exampleTitle">{{ i.description }}</p>
-                    {% endif %}
-
-                    {% if i.code %}
-                        <pre><code data-language="html">
-                            {{ i.code }}
-                        </code></pre>
-                    {% endif %}
-
-                {% endfor %}
-
-
-        </b-tab-item>
-
-        <b-tab-item label="Dj 28.1">
-            <p class="exampleTitle">Оглавление</p>
-                {% for pk in content_281 %}
-                    <p><a href="#{{ pk.id }} + 50">{{ pk.name }}</a></p>
-                {% endfor %}
-            {% for i in content_281 %}
-                {% if i.name %}
-                    <p id="{{ i.id }} + 50"></p>
-                    <h1>{{ i.name }}</h1>
-                {% endif %}
-
-                {% if i.description %}
-                    <p class="exampleTitle">{{ i.description }}</p>
-                {% endif %}
-
-                {% if i.code %}
-                    <pre><code data-language="html">
-                        {{ i.code }}
-                    </code></pre>
-                {% endif %}
-
-        {% endfor %}
-
-
-        </b-tab-item>
+        <center>
+            <p><img src="/media/zen_python.PNG" width="90%" /></p>
+        </center>
     </b-tabs>
 
 {% endblock %}

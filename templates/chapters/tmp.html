@@ -5,32 +5,9 @@
 
     <div id="w-lesson">
     <b-tabs type="is-boxed">
-        {% for r in rows.values %}
-            <b-tab-item label="Dj 27.2">
-                <p class="exampleTitle">Оглавление</p>
-                    {% for pk in r %}
-                        <p><a href="#{{ pk.slug }} + 10">{{ pk.name }}</a></p>
-                    {% endfor %}
-                {% for i in r %}
-                    {% if i.name %}
-                        <p id="{{ i.slug }} + 10"></p>
-                        <h1>{{ i.name }}</h1>
-                    {% endif %}
-
-                    {% if i.description %}
-                        <p class="exampleTitle">{{ i.description }}</p>
-                    {% endif %}
-
-                    {% if i.code %}
-                        <pre><code data-language="html">
-                            {{ i.code }}
-                        </code></pre>
-                    {% endif %}
-
-                {% endfor %}
-
-        </b-tab-item>
-        {% endfor %}
+        <center>
+            <p class="exampleTitle">Что имею то и введу!</p>
+        </center>
     </b-tabs>
 
 {% endblock %}

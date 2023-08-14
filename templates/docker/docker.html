@@ -5,7 +5,7 @@
 
     <div id="w-lesson">
     <b-tabs type="is-boxed">
-        <b-tab-item label="Dock 25.2">
+        <b-tab-item label="Docker 25.2">
         <p class="exampleTitle">Оглавление</p>
             {% for pk in content_252 %}
                 <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
@@ -14,6 +14,12 @@
             {% if i.name %}
                 <p id="{{ i.id }}"></p>
                 <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.photo %}
+               <center>
+                <p><img src={{ i.photo }} width="70%" /></p>
+               </center>
             {% endif %}
 
             {% if i.description %}
@@ -31,7 +37,7 @@
 
         </b-tab-item>
 
-        <b-tab-item label="Dock 26.1">
+        <b-tab-item label="Docker 26.1">
                 <p class="exampleTitle">Оглавление</p>
                     {% for pk in content_261 %}
                         <p><a href="#{{ pk.id }} + 10">{{ pk.name }}</a></p>
@@ -40,6 +46,12 @@
                     {% if i.name %}
                         <p id="{{ i.id }} + 10"></p>
                         <h1>{{ i.name }}</h1>
+                    {% endif %}
+
+                    {% if i.photo %}
+                        <center>
+                            <p><img src={{ i.photo }} width="70%" /></p>
+                        </center>
                     {% endif %}
 
                     {% if i.description %}
@@ -57,7 +69,7 @@
 
         </b-tab-item>
 
-        <b-tab-item label="Dock 26.2">
+        <b-tab-item label="Docker 26.2">
             <p class="exampleTitle">Оглавление</p>
                 {% for pk in content_262 %}
                   <p><a href="#{{ pk.id }} + 50">{{ pk.name }}</a></p>
@@ -66,6 +78,12 @@
                 {% if i.name %}
                   <p id="{{ i.id }} + 50"></p>
                   <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                    <center>
+                        <p><img src={{ i.photo }} width="70%" /></p>
+                    </center>
                 {% endif %}
 
                 {% if i.description %}

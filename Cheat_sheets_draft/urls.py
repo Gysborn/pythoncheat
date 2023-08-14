@@ -29,7 +29,12 @@ urlpatterns = [
     path('', include('hosting.urls')),
     path('', include('oop.urls')),
     path('', include('exceptions.urls')),
-
+    path('', include('git.urls')),
+    path('', include('postgres.urls')),
+    path('', include('sql.urls')),
+    path('', include('testing.urls')),
+    path('', include('typs.urls')),
+    path('', include('regulars.urls')),
 ]
 
 if settings.DEBUG:

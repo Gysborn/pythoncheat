@@ -1,3 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
+from regulars.models import *
+
+
+def re(request):
+    return render(request,
+                  're/re.html',
+                  {
+                      're_241': R241.objects.all(),
+                  }
+                  )

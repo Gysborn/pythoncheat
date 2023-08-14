@@ -7,6 +7,6 @@ def hosting(request):
     return render(request,
                   'hosting/hosting.html',
                   {
-                      'hosting_232': H251.objects.all(),
+                      'hosting_251': H251.objects.all(),
                   }
                   )

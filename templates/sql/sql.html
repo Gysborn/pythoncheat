@@ -1,0 +1,174 @@
+{% extends 'chapters/base.html' %}
+
+{% block content %}
+    <main>
+
+    <div id="w-lesson">
+    <b-tabs type="is-boxed">
+        <b-tab-item label="Sql 14.1">
+        <p class="exampleTitle">Оглавление</p>
+            {% for pk in sql_141 %}
+                <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
+            {% endfor %}
+        {% for i in sql_141 %}
+            {% if i.name %}
+                <p id="{{ i.id }}"></p>
+                <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.description %}
+                <p class="exampleTitle">{{ i.description }}</p>
+            {% endif %}
+
+            {% if i.code %}
+                <pre><code data-language="html">
+                    {{ i.code }}
+                </code></pre>
+            {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Sql 14.2">
+                <p class="exampleTitle">Оглавление</p>
+                    {% for pk in sql_142 %}
+                        <p><a href="#{{ pk.id }} + 10">{{ pk.name }}</a></p>
+                    {% endfor %}
+                {% for i in sql_142 %}
+                    {% if i.name %}
+                        <p id="{{ i.id }} + 10"></p>
+                        <h1>{{ i.name }}</h1>
+                    {% endif %}
+
+                    {% if i.description %}
+                        <p class="exampleTitle">{{ i.description }}</p>
+                    {% endif %}
+
+                    {% if i.code %}
+                        <pre><code data-language="html">
+                            {{ i.code }}
+                        </code></pre>
+                    {% endif %}
+
+                {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Sql 15.1">
+            <p class="exampleTitle">Оглавление</p>
+                {% for pk in sql_151 %}
+                    <p><a href="#{{ pk.id }} + 50">{{ pk.name }}</a></p>
+                {% endfor %}
+            {% for i in sql_151 %}
+                {% if i.name %}
+                    <p id="{{ i.id }} + 50"></p>
+                    <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.description %}
+                    <p class="exampleTitle">{{ i.description }}</p>
+                {% endif %}
+
+                {% if i.code %}
+                    <pre><code data-language="html">
+                        {{ i.code }}
+                    </code></pre>
+                {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Sql 15.2">
+            <p class="exampleTitle">Оглавление</p>
+                {% for pk in sql_152 %}
+                    <p><a href="#{{ pk.id }} + 90">{{ pk.name }}</a></p>
+                {% endfor %}
+            {% for i in sql_152 %}
+                {% if i.name %}
+                    <p id="{{ i.id }} + 90"></p>
+                    <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.description %}
+                    <p class="exampleTitle">{{ i.description }}</p>
+                {% endif %}
+
+                {% if i.code %}
+                    <pre><code data-language="html">
+                        {{ i.code }}
+                    </code></pre>
+                {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Sql 16.1">
+            <p class="exampleTitle">Оглавление</p>
+                {% for pk in sql_161 %}
+                    <p><a href="#{{ pk.id }} + 130">{{ pk.name }}</a></p>
+                {% endfor %}
+            {% for i in sql_161 %}
+                {% if i.name %}
+                    <p id="{{ i.id }} + 130"></p>
+                    <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.description %}
+                    <p class="exampleTitle">{{ i.description }}</p>
+                {% endif %}
+
+                {% if i.code %}
+                    <pre><code data-language="html">
+                        {{ i.code }}
+                    </code></pre>
+                {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Sql 16.2">
+            <p class="exampleTitle">Оглавление</p>
+                {% for pk in sql_162 %}
+                    <p><a href="#{{ pk.id }} + 170">{{ pk.name }}</a></p>
+                {% endfor %}
+            {% for i in sql_162 %}
+                {% if i.name %}
+                    <p id="{{ i.id }} + 170"></p>
+                    <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.description %}
+                    <p class="exampleTitle">{{ i.description }}</p>
+                {% endif %}
+
+                {% if i.code %}
+                    <pre><code data-language="html">
+                        {{ i.code }}
+                    </code></pre>
+                {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+    </b-tabs>
+
+{% endblock %}
+
+</div>
+{% block menu %}
+
+
+    </main>
+{% endblock %}
+
