@@ -29,9 +29,6 @@ services:
       - ./www:/www
     networks:
     - backend
-#volumes:
-#  static:
-#  media:
 
 networks:
     backend:

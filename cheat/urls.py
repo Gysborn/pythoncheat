@@ -35,6 +35,7 @@ urlpatterns = [
     path('', include('testing.urls')),
     path('', include('typs.urls')),
     path('', include('regulars.urls')),
+    path('', include('ide.urls')),
 ]
 
 if settings.DEBUG:

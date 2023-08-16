@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+5n39ovkoo=t^6sks!_jdh1o2s!(b9l7ipugw6r+kx&%wzu0t1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'testing',
     'git',
     'postgres',
+    'ide',
 ]
 
 MIDDLEWARE = [
@@ -125,12 +126,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_ROOT = '/static/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_ROOT = '/www/media/'
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = []
 
 # Default primary key field type
@@ -138,10 +139,10 @@ STATICFILES_DIRS = []
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/www/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = '/www/media/'
+# STATIC_URL = '/static/'
+# STATIC_ROOT = '/www/static/'
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = '/www/media/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request'
