@@ -1,5 +1,5 @@
 """
-ASGI config for Cheat_sheets_draft project.
+ASGI config for cheat project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Cheat_sheets_draft.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cheat.settings')
 
 application = get_asgi_application()

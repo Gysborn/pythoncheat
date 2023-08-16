@@ -1,5 +1,5 @@
 """
-WSGI config for Cheat_sheets_draft project.
+WSGI config for cheat project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Cheat_sheets_draft.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cheat.settings')
 
 application = get_wsgi_application()
