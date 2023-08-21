@@ -18,3 +18,37 @@ class Ide(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Ide_env(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
+    code = models.CharField(max_length=1000, null=True, blank=True)
+    slug = models.SlugField(max_length=50, null=True)
+    photo = models.ImageField(upload_to="photos/", null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    git = models.CharField(max_length=100, null=True, blank=True)
+    colab = models.CharField(max_length=100, null=True, blank=True)
+    video = EmbedVideoField()
+    time_create = models.DateTimeField(auto_now_add=True)
+    time_update = models.DateTimeField(auto_now=True)
+    cat = models.ForeignKey(Chapters, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Ide_env_com(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
+    code = models.CharField(max_length=1000, null=True, blank=True)
+    slug = models.SlugField(max_length=50, null=True)
+    photo = models.ImageField(upload_to="photos/", null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    git = models.CharField(max_length=100, null=True, blank=True)
+    colab = models.CharField(max_length=100, null=True, blank=True)
+    video = EmbedVideoField()
+    time_create = models.DateTimeField(auto_now_add=True)
+    time_update = models.DateTimeField(auto_now=True)
+    cat = models.ForeignKey(Chapters, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.name

@@ -1,5 +1,5 @@
 {% extends 'chapters/base.html' %}
-
+{% load embed_video_tags %}
 {% block content %}
     <main>
 
@@ -14,6 +14,10 @@
             {% if i.name %}
                 <p id="{{ i.id }}"></p>
                 <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.video %}
+                <p class="exampleTitle">{{ i.description }}</p>
             {% endif %}
 
             {% if i.description %}

@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'git',
     'postgres',
     'ide',
+    'doc_spec',
+    'lib',
+
 ]
 
 MIDDLEWARE = [

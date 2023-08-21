@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="{% static '/chapters/images/favicon.svg' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/chapters/images/64x64.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/chapters/images/32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/chapters/images/16x16.png' %}">
+    <title>Python | Sheets</title>
+    <link rel="stylesheet" media="all"
+          href="{% static '/chapters/css/styles.css' %}"/>
+    <!--
+            <script>window.yaContextCb=window.yaContextCb||[]</script><script src="https://yandex.ru/ads/system/context.js" async></script>
+            --></head>
+<body>
+<header class="w-header-main">
+    <nav class="navbar container" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand"><a href="/" class="w-logo"><span class="w-logo-p1">Python</span><span class="w-logo-p2">Sheets</span></a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="w-navbar"><span
+                aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+        <div id="w-navbar" class="navbar-menu w-menu-main">
+            <div class="navbar-start"><a href="/" class="navbar-item" data-drupal-link-system-path="&lt;front&gt;">Главная</a><a
+                    href="/ref" class="navbar-item" data-drupal-link-system-path="taxonomy/term/24">Справочники</a>
+                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Руководства</span>
+                    <div class="navbar-dropdown"><a href="/layout" class="navbar-item active-trail"
+                                                    data-drupal-link-system-path="taxonomy/term/43">Вёрстка</a><a
+                            href="/dev" class="navbar-item" data-drupal-link-system-path="taxonomy/term/1">Веб-технологии</a>
+                    </div>
+                </div>
+                <a href="/course" class="navbar-item" data-drupal-link-system-path="course">Курсы</a><a href="/recipe"
+                                                                                                        class="navbar-item"
+                                                                                                        data-drupal-link-system-path="recipe">Рецепты</a><a
+                        href="/practice" class="navbar-item" data-drupal-link-system-path="practice">Практика</a><a
+                        href="/individual" class="navbar-item"
+                        data-drupal-link-system-path="individual">Самостоятельная</a><a href="/quiz" class="navbar-item"
+                                                                                        data-drupal-link-system-path="quiz">Викторина</a>
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+{% block link %}
+{% endblock %}
+
+<main>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-9-desktop is-12-tablet is-12-mobile w-content" id="w-main">
+                <div data-drupal-messages-fallback class="hidden"></div>
+                <div id="w-lesson">
+                {% block content %}
+                {% endblock %}
+
+                {% block menu %}
+                {% endblock %}
+                </div>
+            </div>
+            <aside class="column is-3-desktop is-12-tablet is-12-mobile w-sidebar" id="w-sidebar">
+                <section class="w-region w-region-sidebar-toc">
+                    <div class="w-block" class="views-element-container" id="block-course-toc"><h2
+                            class="w-block-title">Содержание</h2>
+                        <div class="w-block-content">
+                            <ul>
+                                <li><a href="/temp/" hreflang="ru">Введение</a></li>
+                                <li><a href="/course/html-tutorial/tool" hreflang="ru">Data types</a></li>
+                                <li><a href="/course/html-tutorial/element" hreflang="ru">Cycle</a></li>
+                                <li><a href="/course/html-tutorial/structure" hreflang="ru">Functional programming</a></li>
+                                <li><a href="/course/html-tutorial/attr" hreflang="ru">OOP</a></li>
+                                <li><a href="/course/html-tutorial/value" hreflang="ru">Patterns Anti patterns</a></li>
+                                <li><a href="/course/html-tutorial/text" hreflang="ru">Regulars</a></li>
+                                <li><a href="/course/html-tutorial/link" hreflang="ru">Libraries</a></li>
+                                <li><a href="/" hreflang="ru">Django</a></li>
+                                <li><a href="/course/html-tutorial/image" hreflang="ru">Flask</a></li>
+                                <li><a href="/course/html-tutorial/anchor" hreflang="ru">Git</a></li>
+                                <li><a href="/course/html-tutorial/list" hreflang="ru">Computer science</a></li>
+                                <li><a href="/course/html-tutorial/image" hreflang="ru">Docker</a></li>
+                                <li><a href="/course/html-tutorial/table" hreflang="ru">IDE</a></li>
+                                <li><a href="/course/html-tutorial/table" hreflang="ru">Testing</a></li>
+                                <li><a href="/course/html-tutorial/table" hreflang="ru">Exceptions</a></li>
+                                <li><a href="/course/html-tutorial/table" hreflang="ru">Typing</a></li>
+                                <li><a href="/course/html-tutorial/table" hreflang="ru">SQL</a></li>
+                                <li><a href="/course/html-tutorial/table" hreflang="ru">Hosting and deploy</a></li>
+                                <li><a href="/course/html-tutorial/image" hreflang="ru">Documentation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<script src="{% static '/chapters/js/js_z-5LIluyddUFY97Zpo4e3SzgYTSkT29mCaUQmMp9dBk.js' %}"></script>
+</body>
+</html>
