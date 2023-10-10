@@ -1,8 +1,11 @@
 {% extends 'chapters/base.html' %}
-
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" href="button.css" rel="stylesheet" />
+</head>
 {% block content %}
     <main>
-
     <div id="w-lesson">
     <b-tabs type="is-boxed">
         <b-tab-item label="Func_prog 23.2">
@@ -15,7 +18,6 @@
                 <p id="{{ i.id }}"></p>
                 <h1>{{ i.name }}</h1>
             {% endif %}
-
             {% if i.description %}
                 <p class="exampleTitle">{{ i.description }}</p>
             {% endif %}
@@ -26,8 +28,13 @@
                 </code></pre>
             {% endif %}
 
-        {% endfor %}
+            {% if i.video %}
+                <form action="/fp/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
 
+        {% endfor %}
 
         </b-tab-item>
 

@@ -1,6 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from oop.models import *
+
+oop = {
+    '211': Oop211,
+    '212': Oop212,
+    '221': Oop221,
+    '222': Oop222,
+}
 
 
 def oop(request):
@@ -13,3 +20,17 @@ def oop(request):
                       'oop_222': Oop222.objects.all(),
                   }
                   )
+
+
+def show_video(request, post_slug):
+    obj = post_slug[:3]
+    vid = get_object_or_404(oop[obj], slug=post_slug)
+    context = {
+        'name': vid.name,
+        'code': vid.code,
+        'description': vid.description,
+        'movie': vid.video,
+
+    }
+    return render(request,
+                  'video/show_video.html', context=context)

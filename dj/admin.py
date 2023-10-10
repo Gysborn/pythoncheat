@@ -1,8 +1,15 @@
 from django.contrib import admin
 
-from dj.models import *
+from .models import *
+
 
 # Register your models here.
+class DjAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'code', 'description', 'slag')
+    list_display_links = ('id', 'name')
+#     # search_fields = ('description')
+
+
 admin.site.register(Dj)
 admin.site.register(Dj272)
 admin.site.register(Dj280)

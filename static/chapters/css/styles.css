@@ -37,6 +37,8 @@ body, code {
     font-size: 1em
 }
 
+
+
 button, input, select, textarea {
     margin: 0
 }
@@ -3952,7 +3954,7 @@ main a.ext::after, main a[href*="//"]::after {
 
 @font-face {
     font-family: "Fira Mono";
-    src: local("Fira Mono"), local("FiraMono"), url(/themes/webref/font/FiraMono.eot#iefix) format("embedded-opentype"), url(/themes/webref/font/FiraMono.woff) format("woff"), url(/themes/webref/font/FiraMono.ttf) format("truetype");
+    src: local("Fira Mono"), local("FiraMono"), url(/themes/webref/font/FiraMono.eot#iefix) format("embedded-opentype"), url(/static/fonts/FiraMono-Bold.woff) format("woff"), url(/static/fonts/FiraMono-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal
 }
@@ -4195,17 +4197,17 @@ caption {
     font-weight: 700
 }
 
-.button {
-    background-color: #fff;
-    border-color: #dbdbdb;
-    border-width: 1px;
-    color: #363636;
-    cursor: pointer;
-    justify-content: center;
-    padding: .5em;
-    white-space: nowrap;
-    border-radius: .375em;
-    transition: .3s
+a.button {
+  display: inline-block;
+  background: #2196f3;
+  color: #fff;
+  padding: 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: Tahoma;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 100;
 }
 
 .button[disabled] {
@@ -6239,4 +6241,24 @@ code {
   min-height: 1em;
   color: rgb(55, 53, 47);
   white-space: pre;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p.link-read-post {
+    text-align: right;
+}
+
+p.link-read-post a {
+	padding: 10px;
+	min-width: 100px;
+	background: #333671;
+	color: #fff;
+	text-decoration: none;
 }

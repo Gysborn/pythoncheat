@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from embed_video.fields import EmbedVideoField
 from storage.models import Chapters
 
@@ -6,7 +7,7 @@ from storage.models import Chapters
 class F232(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     code = models.CharField(max_length=1000, null=True, blank=True)
-    slug = models.SlugField(max_length=50, null=True)
+    slug = models.SlugField(max_length=50, db_index=True, null=True, verbose_name="URL")
     photo = models.ImageField(upload_to="photos/", null=True, blank=True)
     description = models.CharField(max_length=1000, null=True, blank=True)
     git = models.CharField(max_length=100, null=True, blank=True)
@@ -18,3 +19,4 @@ class F232(models.Model):
 
     def __str__(self):
         return self.name
+

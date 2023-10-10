@@ -22,7 +22,7 @@
 
             {% if i.photo %}
                <center>
-                <p><img src={{ i.photo }} /></p>
+                <p><img src={{ i.photo }} width="70%" /></p>
                </center>
             {% endif %}
 
@@ -30,6 +30,12 @@
                 <pre><code data-language="html">
                     {{ i.code }}
                 </code></pre>
+            {% endif %}
+
+            {% if i.video %}
+                <form action="/ide/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
             {% endif %}
 
         {% endfor %}
@@ -65,6 +71,12 @@
                 </code></pre>
             {% endif %}
 
+            {% if i.video %}
+                <form action="/ide/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
         {% endfor %}
     </b-tab-item>
 
@@ -86,7 +98,7 @@
 
             {% if i.photo %}
                <center>
-                <p><img src={{ i.photo }} /></p>
+                <p><img src={{ i.photo }} width="70%" /></p>
                </center>
             {% endif %}
 
@@ -96,6 +108,11 @@
                 </code></pre>
             {% endif %}
 
+            {% if i.video %}
+                <form action="/ide/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
         {% endfor %}
     </b-tab-item>
 

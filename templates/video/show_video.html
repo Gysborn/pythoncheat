@@ -1,0 +1,26 @@
+{% extends 'chapters/base.html' %}
+{% load embed_video_tags %}
+{% block content %}
+    <main>
+
+
+
+                <h1>{{ name }}</h1>
+
+                <p class="exampleTitle">{{ description }}</p>
+
+                <pre><code data-language="html">
+                    {{ code }}
+                </code></pre>
+
+                {% video movie 'small' %}
+
+
+{% endblock %}
+
+{% block menu %}
+
+
+    </main>
+{% endblock %}
+

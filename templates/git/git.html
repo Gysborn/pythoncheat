@@ -32,6 +32,12 @@
                 </code></pre>
             {% endif %}
 
+            {% if i.video %}
+                <form action="/git/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
         {% endfor %}
 
 
@@ -56,6 +62,12 @@
                 <pre><code data-language="html">
                     {{ i.code }}
                 </code></pre>
+            {% endif %}
+
+            {% if i.video %}
+                <form action="/git/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
             {% endif %}
 
         {% endfor %}

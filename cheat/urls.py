@@ -38,6 +38,8 @@ urlpatterns = [
     path('', include('ide.urls')),
     path('', include('doc_spec.urls')),
     path('', include('lib.urls')),
+    path('', include('cycle.urls')),
+
 ]
 
 if settings.DEBUG:

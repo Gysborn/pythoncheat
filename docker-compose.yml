@@ -19,14 +19,12 @@ services:
     - backend
 
   app:
-    build: .
+    build:
+      context: .
     image: gysborn/dm_pythoncheat
     restart: always
     ports:
     - "8000:8000"
-    volumes:
-      - .:/app
-      - ./www:/www
     networks:
     - backend
 
