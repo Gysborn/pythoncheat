@@ -16,6 +16,12 @@
                 <h1>{{ i.name }}</h1>
             {% endif %}
 
+            {% if i.photo %}
+               <center>
+                <p><img src={{ i.photo }} width="70%" /></p>
+               </center>
+            {% endif %}
+
             {% if i.description %}
                 <p class="exampleTitle">{{ i.description }}</p>
             {% endif %}
@@ -46,6 +52,12 @@
                     {% if i.name %}
                         <p id="{{ i.id }} + 10"></p>
                         <h1>{{ i.name }}</h1>
+                    {% endif %}
+
+                    {% if i.photo %}
+                       <center>
+                        <p><img src={{ i.photo }} width="70%" /></p>
+                       </center>
                     {% endif %}
 
                     {% if i.description %}
@@ -81,6 +93,12 @@
                     <h1>{{ i.name }}</h1>
                 {% endif %}
 
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
+                {% endif %}
+
                 {% if i.description %}
                     <p class="exampleTitle">{{ i.description }}</p>
                 {% endif %}
@@ -112,6 +130,12 @@
                 {% if i.name %}
                     <p id="{{ i.id }} + 90"></p>
                     <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
                 {% endif %}
 
                 {% if i.description %}
@@ -147,6 +171,12 @@
                     <h1>{{ i.name }}</h1>
                 {% endif %}
 
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
+                {% endif %}
+
                 {% if i.description %}
                     <p class="exampleTitle">{{ i.description }}</p>
                 {% endif %}
@@ -179,6 +209,12 @@
                     <p id="{{ i.id }} + 170"></p>
                     <h1>{{ i.name }}</h1>
                 {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
+                 {% endif %}
 
                 {% if i.description %}
                     <p class="exampleTitle">{{ i.description }}</p>

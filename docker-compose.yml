@@ -21,7 +21,7 @@ services:
   app:
     build:
       context: .
-    image: gysborn/dm_pythoncheat
+    image: gysborn/dm_pythoncheat:datetime
     restart: always
     ports:
     - "8000:8000"

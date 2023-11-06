@@ -4,16 +4,22 @@
     <main>
 
 
-
+                {% if name %}
                 <h1>{{ name }}</h1>
+                {% endif %}
 
+                {% if description %}
                 <p class="exampleTitle">{{ description }}</p>
+                {% endif %}
 
+                {% video movie 'small' %}
+
+                {% if code %}
                 <pre><code data-language="html">
                     {{ code }}
                 </code></pre>
+                {% endif %}
 
-                {% video movie 'small' %}
 
 
 {% endblock %}

@@ -136,6 +136,37 @@
 
         {% endfor %}
 
+        </b-tab-item>
+
+            <b-tab-item label="Oop Patterns">
+            <p class="exampleTitle">Оглавление</p>
+                {% for pk in oop_223 %}
+                    <p><a href="#{{ pk.id }} + 170">{{ pk.name }}</a></p>
+                {% endfor %}
+            {% for i in oop_223 %}
+                {% if i.name %}
+                    <p id="{{ i.id }} + 170"></p>
+                    <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.description %}
+                    <p class="exampleTitle">{{ i.description }}</p>
+                {% endif %}
+
+                {% if i.code %}
+                    <pre><code data-language="html">
+                        {{ i.code }}
+                    </code></pre>
+                {% endif %}
+
+                {% if i.video %}
+                    <form action="/oop/{{ i.slug }}">
+                        <input type="submit" value="Смотреть видео" />
+                    </form>
+                {% endif %}
+
+
+        {% endfor %}
 
         </b-tab-item>
 

@@ -39,6 +39,9 @@ urlpatterns = [
     path('', include('doc_spec.urls')),
     path('', include('lib.urls')),
     path('', include('cycle.urls')),
+    path('', include('working_files.urls')),
+    path('', include('date_time.urls')),
+    path('', include('comp_science.urls')),
 
 ]
 

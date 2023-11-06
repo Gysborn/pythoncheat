@@ -2,6 +2,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <style type ="text/css" >
+   .footer{
+       position: fixed;
+       text-align: center;
+       bottom: 0px;
+       width: 100%;
+   }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="{% static '/chapters/images/favicon.svg' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/chapters/images/64x64.png' %}">
@@ -20,21 +28,27 @@
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="w-navbar"><span
                 aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
         <div id="w-navbar" class="navbar-menu w-menu-main">
-            <div class="navbar-start"><a href="/" class="navbar-item" data-drupal-link-system-path="&lt;front&gt;">Главная</a><a
-                    href="/ref" class="navbar-item" data-drupal-link-system-path="taxonomy/term/24">Справочники</a>
+            <div class="navbar-start"><a href="/" class="navbar-item" data-drupal-link-system-path="&lt;front&gt;">Главная</a>
+                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Справочники</span>
+                    <div class="navbar-dropdown"><a href="/dt" class="navbar-item active-trail"
+                                                   data-drupal-link-system-path="taxonomy/term/43">Module datetime</a><a
+                            href="/dev" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">next...</a>
+                    </div>
+                </div>
+
                 <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Руководства</span>
-                    <div class="navbar-dropdown"><a href="/layout" class="navbar-item active-trail"
-                                                    data-drupal-link-system-path="taxonomy/term/43">Вёрстка</a><a
+                    <div class="navbar-dropdown"><a href="https://novaskill.ru/tilda_zar" class="navbar-item active-trail"
+                                                   target="_blank" data-drupal-link-system-path="taxonomy/term/43">Верстка на tilda</a><a
                             href="/dev" class="navbar-item" data-drupal-link-system-path="taxonomy/term/1">Веб-технологии</a>
                     </div>
                 </div>
                 <a href="/course" class="navbar-item" data-drupal-link-system-path="course">Курсы</a><a href="/recipe"
                                                                                                         class="navbar-item"
                                                                                                         data-drupal-link-system-path="recipe">Рецепты</a><a
-                        href="/practice" class="navbar-item" data-drupal-link-system-path="practice">Практика</a><a
+                        href="https://colab.research.google.com/" class="navbar-item" target="_blank" data-drupal-link-system-path="practice">Практика</a><a
                         href="/individual" class="navbar-item"
-                        data-drupal-link-system-path="individual">Самостоятельная</a><a href="/quiz" class="navbar-item"
-                                                                                        data-drupal-link-system-path="quiz">Викторина</a>
+                        data-drupal-link-system-path="individual">Вход</a><a href="/quiz" class="navbar-item"
+                                                                                        data-drupal-link-system-path="quiz">Регистрация</a>
 
             </div>
 
@@ -69,7 +83,7 @@
                                 <li><a href="/cycle" hreflang="ru">Cycle</a></li>
                                 <li><a href="/fp" hreflang="ru">Functional programming</a></li>
                                 <li><a href="/oop" hreflang="ru">OOP</a></li>
-                                <li><a href="/course/html-tutorial/value" hreflang="ru">Patterns Anti patterns at work</a></li>
+                                <li><a href="/files" hreflang="ru">Работа с файлами</a></li>
                                 <li><a href="/re" hreflang="ru">Regulars</a></li>
                                 <li><a href="/lib" hreflang="ru">Libraries</a></li>
                                 <li><a href="/dj" hreflang="ru">Django</a></li>
@@ -95,5 +109,8 @@
 </main>
 
 <script src="{% static '/chapters/js/js_z-5LIluyddUFY97Zpo4e3SzgYTSkT29mCaUQmMp9dBk.js' %}"></script>
+<div class="b-footer__copyright">
+        © 2023 Все права защищены
+</div>
 </body>
 </html>
