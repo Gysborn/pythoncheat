@@ -2,3 +2,5 @@ logs/
 .git
 *.md
 .cache
+tmp_static/
+tmp_static

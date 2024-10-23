@@ -1,8 +1,11 @@
 {% extends 'chapters/base.html' %}
-
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" href="button.css" rel="stylesheet" />
+</head>
 {% block content %}
     <main>
-
     <div id="w-lesson">
     <b-tabs type="is-boxed">
         <b-tab-item label="Func_prog 23.2">
@@ -15,7 +18,6 @@
                 <p id="{{ i.id }}"></p>
                 <h1>{{ i.name }}</h1>
             {% endif %}
-
             {% if i.description %}
                 <p class="exampleTitle">{{ i.description }}</p>
             {% endif %}
@@ -26,8 +28,43 @@
                 </code></pre>
             {% endif %}
 
+            {% if i.video %}
+                <form action="/fp/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
         {% endfor %}
 
+        </b-tab-item>
+
+        <b-tab-item label="Func_prog 23.3">
+        <p class="exampleTitle">Оглавление</p>
+            {% for pk in fp_233 %}
+                <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
+            {% endfor %}
+        {% for i in fp_233 %}
+            {% if i.name %}
+                <p id="{{ i.id }}"></p>
+                <h1>{{ i.name }}</h1>
+            {% endif %}
+            {% if i.description %}
+                <p class="exampleTitle">{{ i.description }}</p>
+            {% endif %}
+
+            {% if i.code %}
+                <pre><code data-language="html">
+                    {{ i.code }}
+                </code></pre>
+            {% endif %}
+
+            {% if i.video %}
+                <form action="/fp/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
+        {% endfor %}
 
         </b-tab-item>
 

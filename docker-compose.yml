@@ -19,19 +19,16 @@ services:
     - backend
 
   app:
-    build: .
-    image: gysborn/dm_pythoncheat
+    build:
+      context: .
+    image: gysborn/dm_pythoncheat:authentication
     restart: always
     ports:
     - "8000:8000"
     volumes:
-      - .:/app
-      - ./www:/www
+      - ./db.sqlite3:/db.sqlite3
     networks:
     - backend
-#volumes:
-#  static:
-#  media:
 
 networks:
     backend:

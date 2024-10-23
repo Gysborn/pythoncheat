@@ -2,17 +2,42 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <style>
+   .footer {
+       position: fixed;
+       text-align: center;
+       bottom: 0px;
+       width: 100%;
+   }
+
+   input {
+        color: black;
+        background: #4FD1C5;
+        padding: 8px 16px;
+        border: 3px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+   input:hover {
+     background: #1d49aa;
+   }
+
+   input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+   }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="{% static '/chapters/images/favicon.svg' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/chapters/images/64x64.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static '/chapters/images/32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/chapters/images/16x16.png' %}">
     <title>Python | Sheets</title>
-    <link rel="stylesheet" media="all"
-          href="{% static '/chapters/css/styles.css' %}"/>
+    <link rel="stylesheet" media="all" href="{% static '/chapters/css/styles.css' %}"/>
     <!--
             <script>window.yaContextCb=window.yaContextCb||[]</script><script src="https://yandex.ru/ads/system/context.js" async></script>
-            --></head>
+            -->
+</head>
 <body>
 <header class="w-header-main">
     <nav class="navbar container" role="navigation" aria-label="main navigation">
@@ -20,22 +45,49 @@
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="w-navbar"><span
                 aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
         <div id="w-navbar" class="navbar-menu w-menu-main">
-            <div class="navbar-start"><a href="/" class="navbar-item" data-drupal-link-system-path="&lt;front&gt;">Главная</a><a
-                    href="/ref" class="navbar-item" data-drupal-link-system-path="taxonomy/term/24">Справочники</a>
-                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Руководства</span>
-                    <div class="navbar-dropdown"><a href="/layout" class="navbar-item active-trail"
-                                                    data-drupal-link-system-path="taxonomy/term/43">Вёрстка</a><a
-                            href="/dev" class="navbar-item" data-drupal-link-system-path="taxonomy/term/1">Веб-технологии</a>
+            <div class="navbar-start"><a href="/" class="navbar-item" data-drupal-link-system-path="&lt;front&gt;">Главная</a>
+                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Справочники</span>
+                    <div class="navbar-dropdown"><a href="/dt" class="navbar-item active-trail" data-drupal-link-system-path="taxonomy/term/43">Module datetime</a>
+                        <a href="https://www.youtube.com/watch?v=Ir3LpiCcMrI" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">Pandas</a>
+                        <a href="https://regex101.com/" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">regex101</a>
                     </div>
                 </div>
-                <a href="/course" class="navbar-item" data-drupal-link-system-path="course">Курсы</a><a href="/recipe"
-                                                                                                        class="navbar-item"
-                                                                                                        data-drupal-link-system-path="recipe">Рецепты</a><a
-                        href="/practice" class="navbar-item" data-drupal-link-system-path="practice">Практика</a><a
-                        href="/individual" class="navbar-item"
-                        data-drupal-link-system-path="individual">Самостоятельная</a><a href="/quiz" class="navbar-item"
-                                                                                        data-drupal-link-system-path="quiz">Викторина</a>
 
+                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Руководства</span>
+                    <div class="navbar-dropdown"><a href="https://novaskill.ru/tilda_zar" class="navbar-item active-trail" target="_blank" data-drupal-link-system-path="taxonomy/term/43">Верстка на tilda</a>
+                        <a href="/dev" class="navbar-item" data-drupal-link-system-path="taxonomy/term/1">Веб-технологии</a>
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Практика</span>
+                    <div class="navbar-dropdown"><a href="https://colab.research.google.com/" class="navbar-item active-trail" target="_blank" data-drupal-link-system-path="taxonomy/term/43">Colab</a>
+                        <a href="https://www.codewars.com/dashboard" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">Codewars</a>
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Курсы</span>
+                    <div class="navbar-dropdown"><a href="https://lab.karpov.courses/" class="navbar-item active-trail"
+                                                  target="_blank" data-drupal-link-system-path="taxonomy/term/43">SQL Karpov</a>
+                        <a href="https://practicum.yandex.ru/trainer/backend-developer/lesson/51298560-b834-49a5-adca-a0223a23a70d/task/72083e62-2780-4d95-b890-b10ff0fc05b0/" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">Яндекс</a>
+                        <a href="https://beonmax.com/courses/python-advanced/mnogopotochnost-terminy/" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">Beonmax</a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable"><span class="navbar-link">Инструменты</span>
+                    <div class="navbar-dropdown"><a href="https://curlconverter.com/python/" class="navbar-item active-trail" target="_blank" data-drupal-link-system-path="taxonomy/term/43">Curlconverter</a>
+                        <a href="https://jsonviewer.stack.hu/" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">Jsonviewer</a>
+                        <a href="https://developers.whatismybrowser.com/" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">WhatIsMyBrowser</a>
+                        <a href="https://github.com/Gysborn" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">Github</a>
+                        <a href="https://hub.docker.com/" class="navbar-item" target="_blank" data-drupal-link-system-path="taxonomy/term/1">Dockerhub</a>
+                    </div>
+                </div>
+                {% if request.user.is_authenticated %}
+                <a href="/logout" class="navbar-item" data-drupal-link-system-path="individual">Выйти: {{ user.username }}</a>
+                {% else %}
+                <a href="/login" class="navbar-item" data-drupal-link-system-path="individual">Вход</a>
+                <a href="/user_create" class="navbar-item" data-drupal-link-system-path="quiz">Регистрация</a>
+                {% endif %}
             </div>
 
         </div>
@@ -56,35 +108,36 @@
 
                 {% block menu %}
                 {% endblock %}
+
                 </div>
             </div>
             <aside class="column is-3-desktop is-12-tablet is-12-mobile w-sidebar" id="w-sidebar">
                 <section class="w-region w-region-sidebar-toc">
                     <div class="w-block" class="views-element-container" id="block-course-toc"><h2
-                            class="w-block-title">Содержание</h2>
+                            class="w-block-title">Содержание <a href="#" id="scroll_top">↑ Наверх</a></h2>
                         <div class="w-block-content">
                             <ul>
                                 <li><a href="/temp/" hreflang="ru">Введение</a></li>
                                 <li><a href="/types" hreflang="ru">Data types</a></li>
-                                <li><a href="/course/html-tutorial/element" hreflang="ru">Cycle</a></li>
+                                <li><a href="/cycle" hreflang="ru">Cycle</a></li>
                                 <li><a href="/fp" hreflang="ru">Functional programming</a></li>
                                 <li><a href="/oop" hreflang="ru">OOP</a></li>
-                                <li><a href="/course/html-tutorial/value" hreflang="ru">Patterns Anti patterns</a></li>
+                                <li><a href="/files" hreflang="ru">Работа с файлами</a></li>
                                 <li><a href="/re" hreflang="ru">Regulars</a></li>
-                                <li><a href="/course/html-tutorial/link" hreflang="ru">Libraries</a></li>
+                                <li><a href="/lib" hreflang="ru">Libraries</a></li>
                                 <li><a href="/dj" hreflang="ru">Django</a></li>
                                 <li><a href="/flask" hreflang="ru">Flask</a></li>
                                 <li><a href="/git" hreflang="ru">Git</a></li>
-                                <li><a href="/course/html-tutorial/list" hreflang="ru">Computer science</a></li>
+                                <li><a href="/cs" hreflang="ru">Computer science</a></li>
                                 <li><a href="/docker" hreflang="ru">Docker</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">IDE</a></li>
+                                <li><a href="/ide" hreflang="ru">IDE</a></li>
                                 <li><a href="/testing" hreflang="ru">Testing</a></li>
                                 <li><a href="/ex" hreflang="ru">Exceptions</a></li>
-                                <li><a href="/course/html-tutorial/table" hreflang="ru">Typing</a></li>
+                                <li><a href="/types" hreflang="ru">Typing</a></li>
                                 <li><a href="/sql" hreflang="ru">SQL</a></li>
                                 <li><a href="/hosting" hreflang="ru">Hosting and deploy</a></li>
                                 <li><a href="/postgres" hreflang="ru">PostgreSQL</a></li>
-                                <li><a href="/course/html-tutorial/image" hreflang="ru">Documentation</a></li>
+                                <li><a href="/doc" hreflang="ru">Documentation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -95,5 +148,8 @@
 </main>
 
 <script src="{% static '/chapters/js/js_z-5LIluyddUFY97Zpo4e3SzgYTSkT29mCaUQmMp9dBk.js' %}"></script>
+<script src="{% static '/chapters/js/up.js' %}"></script>
+        © 2023 Все права защищены
+</div>
 </body>
 </html>

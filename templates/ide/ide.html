@@ -1,0 +1,129 @@
+{% extends 'chapters/base.html' %}
+
+{% block content %}
+    <main>
+
+    <div id="w-lesson">
+    <b-tabs type="is-boxed">
+        <b-tab-item label="IDE">
+        <p class="exampleTitle">Оглавление</p>
+            {% for pk in ide %}
+                <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
+            {% endfor %}
+        {% for i in ide %}
+            {% if i.name %}
+                <p id="{{ i.id }}"></p>
+                <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.description %}
+                <p class="exampleTitle">{{ i.description }}</p>
+            {% endif %}
+
+            {% if i.photo %}
+               <center>
+                <p><img src={{ i.photo }} width="70%" /></p>
+               </center>
+            {% endif %}
+
+            {% if i.code %}
+                <pre><code data-language="html">
+                    {{ i.code }}
+                </code></pre>
+            {% endif %}
+
+            {% if i.video %}
+                <form action="/ide/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
+        {% endfor %}
+
+
+        </b-tab-item>
+
+        <b-tab-item label="Виртуальное окружение">
+        <p class="exampleTitle">Оглавление</p>
+
+            {% for pk in ide_env %}
+                <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
+            {% endfor %}
+        {% for i in ide_env %}
+            {% if i.name %}
+                <p id="{{ i.id }}"></p>
+                <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.description %}
+                <p class="exampleTitle">{{ i.description }}</p>
+            {% endif %}
+
+            {% if i.photo %}
+               <center>
+                <p><img src={{ i.photo }} /></p>
+               </center>
+            {% endif %}
+
+            {% if i.code %}
+                <pre><code data-language="html">
+                    {{ i.code }}
+                </code></pre>
+            {% endif %}
+
+            {% if i.video %}
+                <form action="/ide/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
+        {% endfor %}
+    </b-tab-item>
+
+    <b-tab-item label="Командная строка">
+        <p class="exampleTitle">Оглавление</p>
+
+            {% for pk in ide_env_com %}
+                <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
+            {% endfor %}
+        {% for i in ide_env_com %}
+            {% if i.name %}
+                <p id="{{ i.id }}"></p>
+                <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.description %}
+                <p class="exampleTitle">{{ i.description }}</p>
+            {% endif %}
+
+            {% if i.photo %}
+               <center>
+                <p><img src={{ i.photo }} width="70%" /></p>
+               </center>
+            {% endif %}
+
+            {% if i.code %}
+                <pre><code data-language="html">
+                    {{ i.code }}
+                </code></pre>
+            {% endif %}
+
+            {% if i.video %}
+                <form action="/ide/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+        {% endfor %}
+    </b-tab-item>
+
+    </b-tabs>
+
+{% endblock %}
+
+</div>
+{% block menu %}
+
+
+    </main>
+{% endblock %}
+

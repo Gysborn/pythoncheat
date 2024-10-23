@@ -16,6 +16,12 @@
                 <h1>{{ i.name }}</h1>
             {% endif %}
 
+            {% if i.photo %}
+               <center>
+                <p><img src={{ i.photo }} /></p>
+               </center>
+            {% endif %}
+
             {% if i.description %}
                 <p class="exampleTitle">{{ i.description }}</p>
             {% endif %}
@@ -25,6 +31,14 @@
                     {{ i.code }}
                 </code></pre>
             {% endif %}
+
+            {% if i.video %}
+                <form action="/hosting/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
+
 
         {% endfor %}
 

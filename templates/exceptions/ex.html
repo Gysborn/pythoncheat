@@ -26,6 +26,12 @@
                 </code></pre>
             {% endif %}
 
+            {% if i.video %}
+                <form action="/ex/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
         {% endfor %}
 
 

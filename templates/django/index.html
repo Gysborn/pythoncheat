@@ -1,5 +1,4 @@
 {% extends 'chapters/base.html' %}
-
 {% block content %}
     <main>
 
@@ -7,13 +6,19 @@
     <b-tabs type="is-boxed">
         <b-tab-item label="Dj 27.1">
         <p class="exampleTitle">Оглавление</p>
-            {% for pk in content_271 %}
+            {% for pk in dj_271 %}
                 <p><a href="#{{ pk.id }}">{{ pk.name }}</a></p>
             {% endfor %}
-        {% for i in content_271 %}
+        {% for i in dj_271 %}
             {% if i.name %}
                 <p id="{{ i.id }}"></p>
                 <h1>{{ i.name }}</h1>
+            {% endif %}
+
+            {% if i.photo %}
+               <center>
+                <p><img src={{ i.photo }} width="70%" /></p>
+               </center>
             {% endif %}
 
             {% if i.description %}
@@ -26,6 +31,12 @@
                 </code></pre>
             {% endif %}
 
+            {% if i.video %}
+                <form action="/dj/{{ i.slug }}">
+                    <input type="submit"  value="Смотреть видео"/>
+                </form>
+            {% endif %}
+
         {% endfor %}
 
 
@@ -33,10 +44,10 @@
 
         <b-tab-item label="Dj 27.2">
                 <p class="exampleTitle">Оглавление</p>
-                    {% for pk in content_272 %}
+                    {% for pk in dj_272 %}
                         <p><a href="#{{ pk.id }} + 10">{{ pk.name }}</a></p>
                     {% endfor %}
-                {% for i in content_272 %}
+                {% for i in dj_272 %}
                     {% if i.name %}
                         <p id="{{ i.id }} + 10"></p>
                         <h1>{{ i.name }}</h1>
@@ -46,11 +57,25 @@
                         <p class="exampleTitle">{{ i.description }}</p>
                     {% endif %}
 
+                    {% if i.photo %}
+                       <center>
+                        <p><img src={{ i.photo }} width="70%" /></p>
+                       </center>
+                    {% endif %}
+
                     {% if i.code %}
                         <pre><code data-language="html">
                             {{ i.code }}
                         </code></pre>
                     {% endif %}
+
+                    {% if i.video %}
+                        <form action="/dj/{{ i.slug }}">
+                            <input type="submit" value="Смотреть видео" />
+                        </form>
+                    {% endif %}
+
+
 
                 {% endfor %}
 
@@ -59,13 +84,19 @@
 
         <b-tab-item label="Dj 28.1">
             <p class="exampleTitle">Оглавление</p>
-                {% for pk in content_281 %}
+                {% for pk in dj_281 %}
                     <p><a href="#{{ pk.id }} + 50">{{ pk.name }}</a></p>
                 {% endfor %}
-            {% for i in content_281 %}
+            {% for i in dj_281 %}
                 {% if i.name %}
                     <p id="{{ i.id }} + 50"></p>
                     <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
                 {% endif %}
 
                 {% if i.description %}
@@ -77,6 +108,13 @@
                         {{ i.code }}
                     </code></pre>
                 {% endif %}
+
+               {% if i.video %}
+                    <form action="/dj/{{ i.slug }}">
+                        <input type="submit" value="Смотреть видео" />
+                    </form>
+                {% endif %}
+
 
         {% endfor %}
 
@@ -85,13 +123,19 @@
 
         <b-tab-item label="Dj 28.2">
             <p class="exampleTitle">Оглавление</p>
-                {% for pk in content_282 %}
+                {% for pk in dj_282 %}
                     <p><a href="#{{ pk.id }} + 90">{{ pk.name }}</a></p>
                 {% endfor %}
-            {% for i in content_282 %}
+            {% for i in dj_282 %}
                 {% if i.name %}
                     <p id="{{ i.id }} + 90"></p>
                     <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
                 {% endif %}
 
                 {% if i.description %}
@@ -103,6 +147,13 @@
                         {{ i.code }}
                     </code></pre>
                 {% endif %}
+
+                {% if i.video %}
+                    <form action="/dj/{{ i.slug }}">
+                        <input type="submit" value="Смотреть видео" />
+                    </form>
+                {% endif %}
+
 
         {% endfor %}
 
@@ -111,13 +162,19 @@
 
         <b-tab-item label="Dj 29.1">
             <p class="exampleTitle">Оглавление</p>
-                {% for pk in content_291 %}
+                {% for pk in dj_291 %}
                     <p><a href="#{{ pk.id }} + 130">{{ pk.name }}</a></p>
                 {% endfor %}
-            {% for i in content_291 %}
+            {% for i in dj_291 %}
                 {% if i.name %}
                     <p id="{{ i.id }} + 130"></p>
                     <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
                 {% endif %}
 
                 {% if i.description %}
@@ -129,6 +186,13 @@
                         {{ i.code }}
                     </code></pre>
                 {% endif %}
+
+                {% if i.video %}
+                    <form action="/dj/{{ i.slug }}">
+                        <input type="submit" value="Смотреть видео" />
+                    </form>
+                {% endif %}
+
 
         {% endfor %}
 
@@ -137,13 +201,19 @@
 
         <b-tab-item label="Dj 29.2">
             <p class="exampleTitle">Оглавление</p>
-                {% for pk in content_292 %}
+                {% for pk in dj_292 %}
                     <p><a href="#{{ pk.id }} + 170">{{ pk.name }}</a></p>
                 {% endfor %}
-            {% for i in content_292 %}
+            {% for i in dj_292 %}
                 {% if i.name %}
                     <p id="{{ i.id }} + 170"></p>
                     <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
                 {% endif %}
 
                 {% if i.description %}
@@ -155,6 +225,13 @@
                         {{ i.code }}
                     </code></pre>
                 {% endif %}
+
+                {% if i.video %}
+                        <form action="/dj/{{ i.slug }}">
+                            <input type="submit" value="Смотреть видео" />
+                        </form>
+                {% endif %}
+
 
         {% endfor %}
 
@@ -163,13 +240,19 @@
 
         <b-tab-item label="Dj 30.1">
             <p class="exampleTitle">Оглавление</p>
-                {% for pk in content_301 %}
+                {% for pk in dj_301 %}
                     <p><a href="#{{ pk.id }} + 210">{{ pk.name }}</a></p>
                 {% endfor %}
-            {% for i in content_301 %}
+            {% for i in dj_301 %}
                 {% if i.name %}
                     <p id="{{ i.id }} + 210"></p>
                     <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
                 {% endif %}
 
                 {% if i.description %}
@@ -180,6 +263,12 @@
                     <pre><code data-language="html">
                         {{ i.code }}
                     </code></pre>
+                {% endif %}
+
+                {% if i.video %}
+                    <form action="/dj/{{ i.slug }}">
+                        <input type="submit" value="Смотреть видео" />
+                    </form>
                 {% endif %}
 
         {% endfor %}
@@ -189,13 +278,19 @@
 
         <b-tab-item label="Dj 30.2">
             <p class="exampleTitle">Оглавление</p>
-                {% for pk in content_302 %}
+                {% for pk in dj_302 %}
                     <p><a href="#{{ pk.id }} + 250">{{ pk.name }}</a></p>
                 {% endfor %}
-            {% for i in content_302 %}
+            {% for i in dj_302 %}
                 {% if i.name %}
                     <p id="{{ i.id }} + 250"></p>
                     <h1>{{ i.name }}</h1>
+                {% endif %}
+
+                {% if i.photo %}
+                   <center>
+                    <p><img src={{ i.photo }} width="70%" /></p>
+                   </center>
                 {% endif %}
 
                 {% if i.description %}
@@ -208,6 +303,12 @@
                     </code></pre>
                 {% endif %}
 
+                {% if i.video %}
+                    <form action="/dj/{{ i.slug }}">
+                        <input type="submit" value="Смотреть видео" />
+                    </form>
+                {% endif %}
+
         {% endfor %}
 
 
@@ -215,13 +316,19 @@
 
         <b-tab-item label="Dj 31.1">
                 <p class="exampleTitle">Оглавление</p>
-                    {% for pk in content_311 %}
+                    {% for pk in dj_311 %}
                         <p><a href="#{{ pk.id }} + 290">{{ pk.name }}</a></p>
                     {% endfor %}
-                {% for i in content_311 %}
+                {% for i in dj_311 %}
                     {% if i.name %}
                         <p id="{{ i.id }} + 290"></p>
                         <h1>{{ i.name }}</h1>
+                    {% endif %}
+
+                    {% if i.photo %}
+                       <center>
+                        <p><img src={{ i.photo }} width="70%" /></p>
+                       </center>
                     {% endif %}
 
                     {% if i.description %}
@@ -232,6 +339,12 @@
                         <pre><code data-language="html">
                             {{ i.code }}
                         </code></pre>
+                    {% endif %}
+
+                    {% if i.video %}
+                        <form action="/dj/{{ i.slug }}">
+                            <input type="submit" value="Смотреть видео" />
+                        </form>
                     {% endif %}
 
                 {% endfor %}
@@ -241,13 +354,19 @@
 
         <b-tab-item label="Dj 31.2">
                 <p class="exampleTitle">Оглавление</p>
-                    {% for pk in content_312 %}
+                    {% for pk in dj_312 %}
                         <p><a href="#{{ pk.id }} + 330">{{ pk.name }}</a></p>
                     {% endfor %}
-                {% for i in content_312 %}
+                {% for i in dj_312 %}
                     {% if i.name %}
                         <p id="{{ i.id }} + 330"></p>
                         <h1>{{ i.name }}</h1>
+                    {% endif %}
+
+                    {% if i.photo %}
+                       <center>
+                        <p><img src={{ i.photo }} width="70%" /></p>
+                       </center>
                     {% endif %}
 
                     {% if i.description %}
@@ -258,6 +377,12 @@
                         <pre><code data-language="html">
                             {{ i.code }}
                         </code></pre>
+                    {% endif %}
+
+                    {% if i.video %}
+                        <form action="/dj/{{ i.slug }}">
+                            <input type="submit" value="Смотреть видео" />
+                        </form>
                     {% endif %}
 
                 {% endfor %}
@@ -267,13 +392,19 @@
 
         <b-tab-item label="Dj 32.0">
                 <p class="exampleTitle">Оглавление</p>
-                    {% for pk in content_320 %}
+                    {% for pk in dj_320 %}
                         <p><a href="#{{ pk.id }} + 370">{{ pk.name }}</a></p>
                     {% endfor %}
-                {% for i in content_320 %}
+                {% for i in dj_320 %}
                     {% if i.name %}
                         <p id="{{ i.id }} + 370"></p>
                         <h1>{{ i.name }}</h1>
+                    {% endif %}
+
+                    {% if i.photo %}
+                       <center>
+                        <p><img src={{ i.photo }} width="70%" /></p>
+                       </center>
                     {% endif %}
 
                     {% if i.description %}
@@ -285,6 +416,13 @@
                             {{ i.code }}
                         </code></pre>
                     {% endif %}
+
+                    {% if i.video %}
+                        <form action="/dj/{{ i.slug }}">
+                            <input type="submit" value="Смотреть видео" />
+                        </form>
+                    {% endif %}
+
 
                 {% endfor %}
 

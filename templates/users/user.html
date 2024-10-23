@@ -1,0 +1,28 @@
+{% extends 'chapters/form.html' %}
+
+{% block content %}
+ <center><h1 > Регистрация </h1></center>
+ <main>
+ <form method="post" >
+       {% csrf_token %}
+       {% for f in form %}
+        <center>
+        <p><label class="form-label"style="position: absolute;left:22%" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        </center>
+       {% endfor %}
+    <div class="wrap">
+       <button class="button" >Зарегистрироваться</button>
+    </div>
+ </form>
+
+
+{% endblock %}
+
+</div>
+{% block menu %}
+
+
+    </main>
+{% endblock %}
+

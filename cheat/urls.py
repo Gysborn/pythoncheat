@@ -35,7 +35,19 @@ urlpatterns = [
     path('', include('testing.urls')),
     path('', include('typs.urls')),
     path('', include('regulars.urls')),
+    path('', include('ide.urls')),
+    path('', include('doc_spec.urls')),
+    path('', include('lib.urls')),
+    path('', include('cycle.urls')),
+    path('', include('working_files.urls')),
+    path('', include('date_time.urls')),
+    path('', include('comp_science.urls')),
+    path('', include('authentication.urls')),
+
 ]
 
 if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns += path("__debug__/", include("debug_toolbar.urls")),
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -26,6 +26,13 @@
                 </code></pre>
             {% endif %}
 
+            {% if i.video %}
+                <form action="/testing/{{ i.slug }}">
+                    <input type="submit" value="Смотреть видео" />
+                </form>
+            {% endif %}
+
+
         {% endfor %}
 
 
@@ -52,6 +59,13 @@
                         </code></pre>
                     {% endif %}
 
+                    {% if i.video %}
+                        <form action="/testing/{{ i.slug }}">
+                            <input type="submit" value="Смотреть видео" />
+                        </form>
+                    {% endif %}
+
+
                 {% endfor %}
 
 
@@ -77,6 +91,13 @@
                         {{ i.code }}
                     </code></pre>
                 {% endif %}
+
+                {% if i.video %}
+                    <form action="/testing/{{ i.slug }}">
+                        <input type="submit" value="Смотреть видео" />
+                    </form>
+                {% endif %}
+
 
         {% endfor %}
 
